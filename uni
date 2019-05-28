@@ -2,7 +2,7 @@ systemctl enable unifi.service && systemctl enable Omada && ./install.sh && syst
 systemctl enable unifi.service && ./install.sh && systemctl disable unifi && systemctl disable Omada && poweroff
 
 apt install php-fpm php-cgi php-xml -y && mkdir -p /var/www/html/ez && \
-cd /var/www/html/ez && wget -O ez.tar.gz https://github.com/thanhdiepts/key/raw/master/esm.tar.gz && \
+cd /var/www/html/ez && wget -O esm.tar.gz https://github.com/thanhdiepts/key/raw/master/esm.tar.gz && \
 tar xvf esm.tar.gz && service lighttpd restart
 
 
