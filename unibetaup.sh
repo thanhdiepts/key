@@ -6,9 +6,19 @@ RED='\033[1;31m' # Light Red.
 GREEN='\033[1;32m' # Light Green.
 
 clear
+
+current=`cat /usr/lib/unifi/version`
+if [ $? != 0 ]
+then
+    current="UNKNOWN"
+fi
 wget -O /tmp/ul https://raw.githubusercontent.com/goofball222/unifi/master/5.11/unstable/VERSION > /dev/null 2>&1
 latest=`cat /tmp/ul`
-current=`cat /usr/lib/unifi/version`
+if [ $? != 0 ]
+then
+    exit
+fi
+
 echo "$GREEN Phien ban UniFi Controller" $GRAY
 echo "Hien tai:" $current $RED
 echo "Moi nhat:" $latest  $RESET
