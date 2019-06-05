@@ -32,6 +32,7 @@ cd /tmp
 wget https://dl.ubnt.com/unifi/$latest/unifi_sysvinit_all.deb
 dpkg -i unifi_sysvinit_all.deb
 chown -R unifi:unifi /usr/lib/unifi/
+echo $latest > /usr/lib/unifi/version
 rm unifi_sysvinit_all.deb
 fi
 service unifi start &
